@@ -1,9 +1,9 @@
-FROM judge0/api-base:1.0.0
+FROM judge0/api-base:1.0.0-mono-only
 
 ENV JUDGE0_HOMEPAGE="https://judge0.com"
 LABEL homepage=$JUDGE0_HOMEPAGE
 
-ENV JUDGE0_SOURCE_CODE="https://github.com/judge0/api"
+ENV JUDGE0_SOURCE_CODE="https://github.com/zakarybk/api"
 LABEL source_code=$JUDGE0_SOURCE_CODE
 
 ENV JUDGE0_MAINTAINER="Herman Zvonimir Došilović <hermanz.dosilovic@gmail.com>"
@@ -32,5 +32,5 @@ COPY . .
 
 CMD ["./scripts/run-server"]
 
-ENV JUDGE0_VERSION="1.5.0"
+ENV JUDGE0_VERSION="1.5.0-mono-only"
 LABEL version=$JUDGE0_VERSION

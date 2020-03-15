@@ -27,7 +27,7 @@ Status page of all public Judge0 services is available at [https://status.judge0
 :::
 
 ## Version
-This document describes Judge0 API version [`v1.5.0`](https://github.com/judge0/api/tree/v1.5.0).
+This document describes Judge0 API version [`v1.5.0-mono-only`](https://github.com/zakarybk/api/tree/1.5.0-mono-only).
 
 ## Date and time formats
 [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) standard is used.
