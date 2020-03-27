@@ -1,4 +1,4 @@
-FROM judge0/api
+FROM judge0/api-base:1.0.0-mono-only
 
 ARG DEV_USER=judge0
 ARG DEV_USER_ID=1000
