@@ -1,3 +1,5 @@
+require 'fileutils'
+
 class IsolateJob < ApplicationJob
   queue_as ENV["JUDGE0_VERSION"].to_sym
 
@@ -64,6 +66,13 @@ class IsolateJob < ApplicationJob
 
     [stdin_file, stdout_file, stderr_file, metadata_file].each do |f|
       initialize_file(f)
+    end
+
+    # Copy over includes
+    submission.language.include_files.each do |f|
+      read_path = "/api/db/languages/includes/dotnet_" + submission.language.id.to_s + "/"
+      read_file = read_path + f
+      FileUtils.cp(read_file, boxdir + "/" + f)
     end
 
     File.open(source_file, "wb") { |f| f.write(submission.source_code) }
