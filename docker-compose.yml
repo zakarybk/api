@@ -1,7 +1,7 @@
 version: '2'
 services:
   api:
-    image: judge0/api
+    image: judge0/api:1.5.0-mono-only
     volumes:
       - ./judge0-api.conf:/judge0-api.conf:ro
     ports:
@@ -10,7 +10,7 @@ services:
     restart: always
 
   worker:
-    image: judge0/api
+    image: judge0/api:1.5.0-mono-only
     command: ["./scripts/run-workers"]
     volumes:
       - ./judge0-api.conf:/judge0-api.conf:ro
