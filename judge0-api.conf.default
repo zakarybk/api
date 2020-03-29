@@ -175,7 +175,7 @@ ENABLE_SUBMISSION_DELETE=
 # Default runtime limit for every program (in seconds). Decimal numbers are allowed.
 # Time in which the OS assigns the processor to different tasks is not counted.
 # Default: 2
-CPU_TIME_LIMIT=
+CPU_TIME_LIMIT=10
 
 # Maximum custom CPU_TIME_LIMIT.
 # Default: 15
