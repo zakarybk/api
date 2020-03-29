@@ -6,9 +6,9 @@
     + Body
         {
             "id": 1,
-            "name": "Bash (4.4)",
-            "is_archived": true,
-            "source_file": "script.sh",
-            "compile_cmd": null,
-            "run_cmd": "/usr/local/bash-4.4/bin/bash script.sh"
+            "name": "C# (Dotnet)",
+            "is_archived": false,
+            "source_file": "Main.cs",
+            "compile_cmd": "/usr/bin/dotnet build",
+            "run_cmd": "/usr/bin/dotnet test"
         }
