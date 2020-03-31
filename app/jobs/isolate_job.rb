@@ -69,7 +69,7 @@ class IsolateJob < ApplicationJob
     end
 
     # Copy over includes
-    submission.language.include_files.each do |f|
+    submission.language.include_files.split(' ').each do |f|
       read_path = "/api/db/languages/includes/dotnet_" + submission.language.id.to_s + "/"
       read_file = read_path + f
       write_file = boxdir + "/" + f
