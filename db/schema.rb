@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20200115205044) do
     t.string  "compile_cmd"
     t.string  "run_cmd"
     t.string  "source_file"
-    t.string  "include_files"
     t.boolean "is_archived", default: false
   end
 

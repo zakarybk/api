@@ -67,17 +67,11 @@ class IsolateJob < ApplicationJob
     [stdin_file, stdout_file, stderr_file, metadata_file].each do |f|
       initialize_file(f)
     end
-
-    # Copy over includes
-    submission.language.include_files.split(' ').each do |f|
-      read_path = "/api/db/languages/includes/dotnet_" + submission.language.id.to_s + "/"
-      read_file = read_path + f
-      write_file = boxdir + "/" + f
-      FileUtils.cp(read_file, write_file)
-      `sudo chown $(whoami): #{write_file}`
-    end
-
-    File.open(source_file, "wb") { |f| f.write(submission.source_code) }
+    read_path = "/api/db/languages/includes/dotnet_" + submission.language.id.to_s + "/."
+    FileUtils.cp_r(read_path, boxdir)
+    `sudo chown -R $(whoami) #{boxdir}`
+    `sudo chmod -R 777 #{boxdir}`
+    #File.open(source_file, "wb") { |f| f.write(submission.source_code) }
     File.open(stdin_file, "wb") { |f| f.write(submission.stdin) }
 
     extract_archive
