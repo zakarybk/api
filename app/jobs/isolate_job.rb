@@ -71,6 +71,7 @@ class IsolateJob < ApplicationJob
     FileUtils.cp_r(read_path, boxdir)
     `sudo chown -R $(whoami) #{boxdir}`
     `sudo chmod -R 777 #{boxdir}`
+    `export TMPDIR=#{tmpdir}`
     #File.open(source_file, "wb") { |f| f.write(submission.source_code) }
     File.open(stdin_file, "wb") { |f| f.write(submission.stdin) }
 
