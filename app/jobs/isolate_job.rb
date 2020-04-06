@@ -71,7 +71,10 @@ class IsolateJob < ApplicationJob
     FileUtils.cp_r(read_path, boxdir)
     `sudo chown -R $(whoami) #{boxdir}`
     `sudo chmod -R 777 #{boxdir}`
+    `sudo chown -R $(whoami) #{tmpdir}`
+    `sudo chmod -R 777 #{tmpdir}`
     `export TMPDIR=#{tmpdir}`
+    `export DOTNET_CLI_HOME=#{tmpdir}/DOTNET_CLI_HOME`
     #File.open(source_file, "wb") { |f| f.write(submission.source_code) }
     File.open(stdin_file, "wb") { |f| f.write(submission.stdin) }
 
