@@ -7,6 +7,6 @@
     is_archived: false,
     source_file: "Main.cs",
     compile_cmd: "",
-    run_cmd: "/usr/bin/dotnet test"
+    run_cmd: "DOTNET_CLI_HOME=/tmp/.cache/dotnet-test /usr/bin/dotnet test"
   },
 ]
